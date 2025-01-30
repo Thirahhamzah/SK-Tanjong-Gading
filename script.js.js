@@ -1,47 +1,19 @@
-<script>
-let slideIndex = 0; 
-    showSlides(); 
- 
-    function showSlides() { 
-        let slides = document.getElementsByClassName("slides"); 
-        for (let i = 0; i < slides.length; i++) { 
-            slides[i].style.display = "none"; 
-        } 
-        slideIndex++; 
-        if (slideIndex > slides.length) {slideIndex = 1} 
-        slides[slideIndex - 1].style.display = "block"; 
-        setTimeout(showSlides, 6000);  
-    } 
- 
-    function plusSlides(n) { 
-        slideIndex += n - 1; 
-        showSlides(); 
-    } 
-</script>
+document.addEventListener("DOMContentLoaded", function () {
+    // ---------------- Slideshow 1 (Auto-play) ---------------- //
+    let slideIndex = 0;
+    function showSlides() {
+        let slides = document.querySelectorAll(".slides img");
+        slides.forEach(slide => slide.style.display = "none");
 
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
 
-<script> 
-    let slideIndex = 0; 
-    showSlides(); 
- 
-    function showSlides() { 
-        let slides = document.getElementsByClassName("slides"); 
-        for (let i = 0; i < slides.length; i++) { 
-            slides[i].style.display = "none"; 
-        } 
-        slideIndex++; 
-        if (slideIndex > slides.length) {slideIndex = 1} 
-        slides[slideIndex - 1].style.display = "block"; 
-        setTimeout(showSlides, 6000);  
-    } 
- 
-    function plusSlides(n) { 
-        slideIndex += n - 1; 
-        showSlides(); 
-    } 
-</script>
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); 
+    }
+    showSlides();
 
-<script>
+    // ---------------- Image Modal ---------------- //
     const images = [
         "tahun1.jpg",
         "tahun2.jpg",
@@ -74,54 +46,34 @@ let slideIndex = 0;
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         document.getElementById("modalImage").src = images[currentIndex];
     }
-</script>
 
-<script>
-    const images = document.querySelectorAll('.gallery-slideshow img');
+    // ---------------- Slideshow 2 (Gallery) ---------------- //
+    const galleryImages = document.querySelectorAll('.gallery-slideshow img');
     const prevButton = document.querySelector('.control.prev');
     const nextButton = document.querySelector('.control.next');
 
-    let currentIndex = 0;
+    let galleryIndex = 0;
 
-    function showImage(index) {
-        images.forEach((img, i) => {
+    function showGalleryImage(index) {
+        galleryImages.forEach((img, i) => {
             img.classList.toggle('active', i === index);
         });
     }
 
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
+    function nextGalleryImage() {
+        galleryIndex = (galleryIndex + 1) % galleryImages.length;
+        showGalleryImage(galleryIndex);
     }
 
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
+    function prevGalleryImage() {
+        galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+        showGalleryImage(galleryIndex);
     }
 
-    nextButton.addEventListener('click', nextImage);
-    prevButton.addEventListener('click', prevImage);
-
-    // Optional: Auto-play slideshow
-    setInterval(nextImage, 4000); 
-</script>
-
-<script>
-  
-  let slideIndex = 0;
-  const slides = document.querySelectorAll(".slides img");
-
-  function showSlides() {
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    if (prevButton && nextButton) {
+        nextButton.addEventListener('click', nextGalleryImage);
+        prevButton.addEventListener('click', prevGalleryImage);
     }
 
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 3000); 
-  }
-
-  showSlides();
-</script>
+    setInterval(nextGalleryImage, 4000);
+});
