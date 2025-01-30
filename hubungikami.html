@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hubungi Sekolah Kebangsaan Tanjong Gading untuk sebarang pertanyaan atau maklum balas.">
+  <title>Hubungi Kami - SK Tanjong Gading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+
+    header {
+      color:linear-gradient(45deg, #3b8d99, #6fa3e1); 
+      text-align: center;
+      padding: 3rem 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .contact-info .highlight {
+      font-weight: bold;
+      color: #0056b3;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .contact-form textarea {
+      height: 150px;
+    }
+
+    .contact-form button {
+      background-color: #0056b3;
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #004494;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hubungi Kami</h1>
+  </header>
+
+  <div class="container">
+    <div class="contact-info">
+      <h2>Sekolah Kebangsaan Tanjong Gading</h2>
+      <p>
+        Kampung Merbau<br>
+        84000 Muar, Johor<br><br>
+        <strong>Telefon:</strong> <span class="highlight">+06-953 1002</span><br>
+        <strong>Email:</strong> <span class="highlight">sktanjonggading@gmail.com</span>
+      </p>
+      <p>Sila hubungi kami untuk maklumat lanjut atau sebarang pertanyaan.</p>
+    </div>
+
+    <div class="contact-form">
+      <h3>Hantar Pertanyaan Anda</h3>
+      <form action="submit_form.php" method="POST">
+        <label for="name">Nama</label>
+        <input type="text" id="name" name="name" placeholder="Masukkan nama anda" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Masukkan email anda" required>
+
+        <label for="message">Mesej</label>
+        <textarea id="message" name="message" placeholder="Masukkan mesej anda" required></textarea>
+
+        <button type="submit">Hantar</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Sekolah Kebangsaan Tanjong Gading. All rights reserved.</p>
+  </footer>
+</body>
+</html>

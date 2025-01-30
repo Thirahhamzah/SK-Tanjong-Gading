@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencapaian Pelajar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .achievement {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        .achievement-card {
+            text-align: center;
+        }
+        .achievement-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .achievement-card img:hover {
+            transform: scale(1.1);
+        }
+        .achievement-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2rem;
+            color: #222;
+        }
+        .achievement-card p {
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            position: relative;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 10px;
+        }
+        .nav-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .achievement-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .achievement-card img:hover {
+            transform: scale(1.05);
+        }
+        .achievement-card h3 {
+            margin: 10px 0 5px;
+            font-size: 1.2rem;
+            color: #222;
+        }
+        .achievement-card p {
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+        }
+        .name-list {
+            margin-top: 20px;
+            padding: 0 20px;
+        }
+        .name-list ol {
+            padding-left: 20px;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="text-align: center; background-color: deepskyblue; color: white; padding: 1rem;">Pencapaian Pelajar SKTG</h1>
+</header>
+
+<div class="container">
+    <div class="title">Pencapaian Pelajar</div>
+    <p>Berikut adalah pencapaian cemerlang pelajar kami dalam bidang akademik yang membanggakan pihak sekolah dan ibu bapa. Antara pencapaian yang ditonjolkan termasuk kejayaan dalam pertandingan peringkat negeri dan kebangsaan, peningkatan dalam peperiksaan sekolah, serta anugerah khas akademik. Nama-nama pelajar yang berjaya termasuk:</p>
+    <div class="achievement">
+        <div class="achievement-card" onclick="openModal('tahun1.jpg', 0)">
+            <img src="tahun1.jpg" alt="Pelajar Terbaik Tahun 1">
+            <h3>Pelajar Terbaik Tahun 1</h3>
+            <p>Nurul Aisyah Binti Amirul</p>
+        </div>
+        <div class="achievement-card" onclick="openModal('tahun2.jpg', 1)">
+            <img src="tahun2.jpg" alt="Pelajar Terbaik Tahun 2">
+            <h3>Pelajar Terbaik Tahun 2</h3>
+            <p>Mohd Hafiz Bin Zainal</p>
+        </div>
+        <div class="achievement-card" onclick="openModal('tahun3.jpg', 2)">
+            <img src="tahun3.jpg" alt="Pelajar Terbaik Tahun 3">
+            <h3>Pelajar Terbaik Tahun 3</h3>
+            <p>Siti Nor Farah Binti Jamal</p>
+        </div>
+        <div class="achievement-card" onclick="openModal('tahun4.jpg', 3)">
+            <img src="tahun4.jpg" alt="Pelajar Terbaik Tahun 4">
+            <h3>Pelajar Terbaik Tahun 4</h3>
+            <p>Nur Farah Humairah Binti Faizal</p>
+        </div>
+        <div class="achievement-card" onclick="openModal('tahun5.jpg', 4)">
+            <img src="tahun5.jpg" alt="Pelajar Terbaik Tahun 5">
+            <h3>Pelajar Terbaik Tahun 5</h3>
+            <p>Nur Darwisyah Hazwani Binti Abdullah</p>
+        </div>
+        <div class="achievement-card" onclick="openModal('tahun6.jpg', 5)">
+            <img src="tahun6.jpg" alt="Pelajar Terbaik Tahun 6">
+            <h3>Pelajar Terbaik Tahun 6</h3>
+            <p>Ahmad Faisal Bin Razak</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="title">Anugerah Tokoh Pelajar</div>
+    <p> Berikut merupakan senarai pelajar yang mendapat Anugerah Khas Akademik iaitu Anugerah Tokoh Murid Lelaki, Anugerah Tokoh Murid Perempuan, Anugerah Kepimpinan, Anugerah Kokurikulum dan Anugerah Sahsiah Murid Terbaik.</p>
+
+<div class="name-list">
+        <h3>Senarai Nama  Pelajar:</h3>
+        <ol>
+            <li><b>Muhammad Mizan Bin Ahmad</b>-<b> Tokoh Murid Lelaki</b></li>
+            <li><b>Nur Farisya Ameerah Binti Muhammad</b>-<b>Tokoh Murid Perempuan</b></li>
+            <li><b>Ahmad Naim Bin Ali</b>-<b>Tokoh Kepimpinan</b></li>
+            <li><b>Nur Batrisha Binti Rahman</b>-<b>Tokoh Kokurikulum</b></li>
+            <li><b>Siti Humairah Binti Mohd Amir</b>-<b>Tokoh Sahsiah Murid Terbaik</b></li>
+        </ol>
+
+    </div>
+    <div class="achievement-grid">
+    <div class="achievement-card" onclick="openModal('tokohlelaki.jpg', 6)">
+        <img src="tokohlelaki.jpg" alt="Tokoh Murid Lelaki">
+        <h3>Tokoh Murid Lelaki</h3>
+        <p>Muhammad Mizan Bin Ahmad</p>
+    </div>
+    <div class="achievement-card" onclick="openModal('tokohperempuan.jpg', 7)">
+        <img src="tokohperempuan.jpg" alt="Tokoh Murid Perempuan">
+        <h3>Tokoh Murid Perempuan</h3>
+        <p>Nur Farisya Ameerah Binti Muhammad</p>
+    </div>
+    <div class="achievement-card" onclick="openModal('kepimpinan.jpg', 8)">
+        <img src="kepimpinan.jpg" alt="Tokoh Kepimpinan">
+        <h3>Tokoh Kepimpinan</h3>
+        <p>Ahmad Naim Bin Ali</p>
+    </div>
+    <div class="achievement-card" onclick="openModal('kurikulum.jpg', 9)">
+        <img src="kurikulum.jpg" alt="Tokoh Kokurikulum">
+        <h3>Tokoh Kokurikulum</h3>
+        <p>Nur Batrisha Binti Rahman</p>
+    </div>
+    <div class="achievement-card" onclick="openModal('sahsiah.jpg', 10)">
+        <img src="sahsiah.jpg" alt="Tokoh Sahsiah Murid Terbaik">
+        <h3>Tokoh Sahsiah Murid Terbaik</h3>
+        <p>Siti Humairah Binti Mohd Amir</p>
+    </div>
+</div>
+
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Gambar Pencapaian Pelajar">
+        <div class="nav-buttons">
+            <button onclick="prevImage(event)">&#8249;</button>
+            <button onclick="nextImage(event)">&#8250;</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const images = [
+        "tahun1.jpg",
+        "tahun2.jpg",
+        "tahun3.jpg",
+        "tahun4.jpg",
+        "tahun5.jpg",
+        "tahun6.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function openModal(imageSrc, index) {
+        currentIndex = index;
+        document.getElementById("imageModal").style.display = "flex";
+        document.getElementById("modalImage").src = imageSrc;
+    }
+
+    function closeModal() {
+        document.getElementById("imageModal").style.display = "none";
+    }
+
+    function nextImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex + 1) % images.length;
+        document.getElementById("modalImage").src = images[currentIndex];
+    }
+
+    function prevImage(event) {
+        event.stopPropagation();
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        document.getElementById("modalImage").src = images[currentIndex];
+    }
+</script>
+
+</body>
+</html>

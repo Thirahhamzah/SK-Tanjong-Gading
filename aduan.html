@@ -1,0 +1,147 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Aduan Sekolah</title> 
+    <style> 
+           body { 
+      font-family: 'Poppins', Arial, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background-color: #f0f8ff;  
+      color: #333; 
+    } 
+     header { 
+      color:linear-gradient(45deg, #3b8d99, #6fa3e1);  
+      text-align: center; 
+      padding: 3rem 1.5rem; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    } 
+ 
+    header h1 { 
+      margin: 0; 
+      font-size: 3rem; 
+      font-weight: bold; 
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+    } 
+        header p { 
+            font-size: 14px; 
+        } 
+ 
+        .container { 
+            padding: 20px; 
+        } 
+ 
+        form { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 5px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        } 
+ 
+        form input, form select, form textarea, form button { 
+            width: 100%; 
+            margin-bottom: 15px; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        } 
+ 
+        form button { 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        } 
+ 
+        form button:hover { 
+            background-color: #0056b3; 
+        } 
+ 
+        .aduan-list { 
+            margin-top: 20px; 
+        } 
+ 
+        .aduan-item { 
+            background: white; 
+            padding: 15px; 
+            border-radius: 5px; 
+            margin-bottom: 10px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        } 
+ 
+        .aduan-item h3 { 
+            margin: 0 0 10px; 
+            font-size: 18px; 
+            color: #007bff; 
+        } 
+ 
+        .aduan-item p { 
+            margin: 0; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <header> 
+        <h1>Laman Aduan SKTG</h1> 
+        <p>Kongsikan aduan atau cadangan anda untuk meningkatkan kualiti sekolah.</p> 
+    </header> 
+    <div class="container"> 
+        <form id="aduanForm"> 
+            <label for="nama">Nama:</label> 
+            <input type="text" id="nama" placeholder="Masukkan nama anda" required> 
+             
+            <label for="tajuk">Tajuk Aduan:</label> 
+            <select id="tajuk" required> 
+                <option value="">-- Pilih Tajuk Aduan --</option> 
+                <option value="Kemudahan Sekolah">Kemudahan Sekolah</option> 
+                <option value="Kebersihan">Kebersihan</option> 
+                <option value="Disiplin Pelajar">Disiplin Pelajar</option> 
+                <option value="Pengajaran dan Pembelajaran">Pengajaran dan Pembelajaran</option> 
+                <option value="Lain-lain">Lain-lain</option> 
+            </select> 
+             
+            <label for="aduan">Butiran Aduan:</label> 
+            <textarea id="aduan" rows="4" placeholder="Terangkan aduan anda secara terperinci" required></textarea> 
+             
+            <button type="submit">Hantar Aduan</button> 
+        </form> 
+ 
+        <div class="aduan-list" id="aduanList"> 
+            <h2>Senarai Aduan</h2> 
+        </div> 
+    </div> 
+ 
+    <script> 
+        const aduanForm = document.getElementById('aduanForm'); 
+        const aduanList = document.getElementById('aduanList'); 
+ 
+        aduanForm.addEventListener('submit', function(event) { 
+            event.preventDefault(); // Mengelakkan refresh halaman 
+ 
+            const nama = document.getElementById('nama').value; 
+            const tajuk = document.getElementById('tajuk').value; 
+            const aduan = document.getElementById('aduan').value; 
+ 
+            if (nama && tajuk && aduan) { 
+                const aduanItem = document.createElement('div'); 
+                aduanItem.classList.add('aduan-item'); 
+                aduanItem.innerHTML = ` 
+                    <h3>${tajuk}</h3> 
+                    <p><strong>Nama:</strong> ${nama}</p>
+<p><strong>Butiran:</strong> ${aduan}</p> 
+                `; 
+ 
+                // Tambah elemen ke senarai aduan 
+                aduanList.appendChild(aduanItem); 
+ 
+                // Reset borang 
+                aduanForm.reset(); 
+            } else { 
+                alert('Sila isi semua maklumat!'); 
+            } 
+        }); 
+    </script> 
+</body> 
+</html>
