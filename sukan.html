@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="footer.css">
+    <title>Sukan SKTG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        header {
+            background-color: deepskyblue;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin: 2rem 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-slideshow {
+            position: relative;
+            max-width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .gallery-slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .gallery-slideshow img.active {
+            opacity: 1;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .control {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Aktiviti Sukan SK Tanjong Gading</h1>
+    </header>
+
+    <div class="container">
+        <section id="sukan tahunan" class="section">
+            <h2 class="section-title">Sukan Tahunan</h2>
+            <p class="content">Kami sentiasa menekankan kepentingan aktiviti sukan dalam membentuk generasi yang aktif dan sihat. Sukan Tahunan merupakan acara yang dinanti-nantikan setiap tahun, melibatkan murid, guru, dan ibu bapa dalam suasana penuh semangat. Selain itu, murid-murid kami juga aktif menyertai pertandingan sukan di peringkat daerah dan negeri, menunjukkan bakat dan semangat kesukanan yang tinggi. Kami turut mengadakan program kecergasan secara berkala bagi memastikan warga sekolah sentiasa kekal cergas dan bertenaga.</p>
+
+            <div class="gallery-slideshow">
+                <img src="sukan1.jpg" alt="Sukan Tahunan1" class="active">
+                <img src="sukan2.jpg" alt="Sukan Tahunan2">
+                <img src="sukan3.jpg" alt="Sukan Tahunan3">
+                <img src="sukan4.jpg" alt="Sukan Tahunan4">
+                <img src="sukan5.jpg" alt="Sukan Tahunan5">
+                <img src="sukan6.jpg" alt="Sukan Tahunan6">
+                <img src="sukan7.jpg" alt="Sukan Tahunan7">
+                <img src="sukan8.jpg" alt="Sukan Tahunan8">
+                <img src="sukan9.jpg" alt="Sukan Tahunan9">
+                <img src="sukan10.jpg" alt="Sukan Tahunan10">
+                <img src="rentasdesa1.jpg" alt="Merentas Desa1">
+                <img src="rentasdesa2.jpg" alt="Merentas Desa2">
+                <img src="rentasdesa3.jpg" alt="Merentas Desa3">
+                <img src="rentasdesa4.jpg" alt="Merentas Desa4">
+                <div class="caption">Kejohanan Sukan Olahraga</div>
+                <div class="controls">
+                    <button class="control prev">&#10094;</button>
+                    <button class="control next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="penyertaan luar" class="section">
+            <h2 class="section-title">Penyertaan Luar</h2>
+            <p class="content">SKTG aktif dalam pelbagai pertandingan sukan di peringkat daerah, negeri, dan kebangsaan. Penyertaan ini memberi peluang kepada murid untuk mengasah bakat, meningkatkan keyakinan diri, dan mengharumkan nama sekolah. Kejayaan mereka juga memberi inspirasi kepada rakan-rakan untuk berusaha mencapai kecemerlangan.</p>
+            <div class="gallery">
+                <img src="pertandingan1.jpg" alt="Pertandingan Inovasi">
+                <img src="pertandingan2.jpg" alt="Pertandingan Inovasi">
+                <img src="pertandingan3.jpg" alt="Pertandingan Inovasi">
+                <img src="pertandingan4.jpg" alt="Pertandingan Inovasi">
+                <img src="pertandingan5.jpg" alt="Pertandingan Inovasi">
+            </div>
+        </section>
+
+        <section id="program kecerdasan" class="section">
+            <h2 class="section-title">Program Kecerdasan</h2>
+            <p class="content">SK Tanjong Gading aktif melaksanakan pelbagai program kecerdasan yang dirancang khusus untuk mengasah kemahiran intelek serta daya pemikiran kritis murid. Program-program ini bukan sahaja membantu murid mencapai kecemerlangan dalam akademik, malah turut memberi peluang kepada mereka untuk membina keyakinan diri yang mantap. Selain itu, kejayaan yang diraih melalui penyertaan dalam program ini turut menyumbang kepada usaha mengharumkan nama sekolah di peringkat tempatan, negeri, dan kebangsaan.</p>
+            <div class="gallery">
+                <a target="_blank" href="program kecerdasan1.jpg">
+  <img src="program kecerdasan1.jpg" alt="Fun Run 1">
+</a>
+                <img src="program kecerdasan2.jpg" alt="Fun Run2">
+                <img src="program kecerdasan3.jpg" alt="Fun Run3">
+                <img src="program kecerdasan4.jpg" alt="Fun Run4">
+                <img src="program kecerdasan5.jpg" alt="Fun Run5">
+                <img src="program kecerdasan6.jpg" alt="Fun Run6">
+                <img src="program kecerdasan7.jpg" alt="Fun Run7">
+                <img src="program kecerdasan8.jpg" alt="Fun Run8">
+                <img src="program kecerdasan9.jpg" alt="Fun Run9">
+                <img src="program kecerdasan10.jpg" alt="Fun Run10">
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="sktg.png" alt="SK Tanjong Gading Logo" class="footer-logo">
+                <p><strong>SK Tanjong Gading</strong></p>
+                <p>Kampung Merbau 84000<br>Muar, Johor </p>
+                <p><strong>Phone:</strong> +06-953 1002<br><strong>Email:</strong> sktanjonggading@gmail.com</p>
+            </div>
+            <div class="footer-column">
+                <h4>Media</h4>
+                <ul>
+                    <li><a href="#">News</a></li>
+                    <li><a href="events.html">Past Event</a></li>
+                    <li><a href="Videos.html">Videos</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="hubungikami.html">Hubungi Kami</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SK Tanjong Gading. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script>
+    const images = document.querySelectorAll('.gallery-slideshow img');
+    const prevButton = document.querySelector('.control.prev');
+    const nextButton = document.querySelector('.control.next');
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+
+    nextButton.addEventListener('click', nextImage);
+    prevButton.addEventListener('click', prevImage);
+
+    // Optional: Auto-play slideshow
+    setInterval(nextImage, 4000); 
+</script>
+
+</body>
+</html>
