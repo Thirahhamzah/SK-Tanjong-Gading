@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SK Tanjong Gading - Inovasi dan pendidikan untuk masa depan yang lebih cerah.">
+  <title>SK Tanjong Gading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="footer.css">
+<script src="script.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      color: #0056b3;
+    }
+
+    header {
+      background-color: #0056b3;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    header img {
+      width: 80px;
+      height: auto;
+      margin-right: 1rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: 700;
+    }
+
+    
+    .hero-section {
+      position: relative;
+      height: 80vh;
+      background-image: url('background sekolah 2.jpg'); 
+      background-size: cover;
+      background-position: center;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-section .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-section .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section .content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .hero-section .content p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-section .content a {
+      background-color: #80c0f0;
+      color: white;
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero-section .content a:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .feature {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      text-align: center;
+      width: 300px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    .feature p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    footer .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    footer .footer-column {
+      flex: 1 1 22%;
+      margin: 1rem;
+    }
+
+    footer .footer-logo {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    footer .footer-column h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer .footer-column ul li {
+      margin: 0.5rem 0;
+    }
+
+    footer .footer-column ul li a:hover {
+      text-decoration: underline;
+    }
+
+    footer .footer-bottom {
+      border-top: 1px solid #555;
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    footer .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-links a:hover {
+      color: #80c0f0;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      header img {
+        width: 60px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+       
+        } 
+        .slideshow-container { 
+            position: relative; 
+            max-width: 30%; 
+            margin: 20px auto; 
+            overflow: hidden; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+        } 
+        .slides { 
+            display: none; 
+            text-align: center; 
+        } 
+        .slides img { 
+            width: 100%; 
+            border-radius: 8px; 
+        } 
+        .description { 
+            background: rgba(0, 0, 0, 0.6); 
+            color: white; 
+            padding: 10px; 
+            text-align: center; 
+            position: absolute; 
+            bottom: 50px; 
+            width: 100%; 
+            text-align: center; 
+            font-size: 14px; 
+        } 
+        .register-btn { 
+            margin-top: 10px; 
+            padding: 8px 16px; 
+            font-size: 14px; 
+            background: dodgerblue; 
+            color: #333; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: inline-block; 
+        } 
+        .register-btn:hover { 
+            background: #ff9900; 
+        } 
+        .prev, .next { 
+            cursor: pointer; 
+            position: absolute; 
+            top: 50%; 
+            width: auto; 
+            margin-top: -22px; 
+            padding: 16px; 
+            color: white; 
+            font-weight: bold; 
+            font-size: 18px; 
+            border-radius: 0 3px 3px 0; 
+            user-select: none; 
+            background: rgba(0, 0, 0, 0.6); 
+        } 
+        .next { 
+            right: 0; 
+            border-radius: 3px 0 0 3px; 
+        } 
+        .prev { 
+            left: 0; 
+        } 
+        .prev:hover, .next:hover { 
+            background: rgba(0, 0, 0, 0.8); 
+        } 
+  footer { 
+      background-color: #333; 
+      color: white; 
+      padding: 2rem 1rem; 
+      text-align: center; 
+    } 
+ 
+    footer .footer-container { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: space-between; 
+      margin-bottom: 1rem; 
+    } 
+ 
+    footer .footer-column { 
+      flex: 1 1 22%; 
+      margin: 1rem; 
+    } 
+ 
+    footer .footer-logo { 
+      max-width: 100px; 
+      margin-bottom: 1rem; 
+    } 
+ 
+    footer .footer-column h4 { 
+      font-size: 1.2rem; 
+      margin-bottom: 0.5rem; 
+    } 
+ 
+    footer .footer-column ul { 
+      list-style: none; 
+      padding: 0; 
+    } 
+ 
+    footer .footer-column ul li { 
+      margin: 0.5rem 0; 
+    } 
+ 
+    footer .footer-column ul li a:hover { 
+      text-decoration: underline; 
+    } 
+ 
+    footer .footer-bottom { 
+      border-top: 1px solid #555; 
+      padding-top: 1rem; 
+      font-size: 0.9rem; 
+      margin-top: 2rem; 
+    } 
+ 
+    footer .social-links a { 
+      color: white; 
+      margin: 0 10px; 
+      font-size: 1.5rem; 
+      transition: color 0.3s ease; 
+    } 
+ 
+    footer .social-links a:hover { 
+      color: #80c0f0; 
+    } 
+ 
+    .footer { 
+      text-align: center; 
+      margin-top: 2rem; 
+    } 
+ 
+    @media (max-width: 768px) { 
+      header img { 
+        width: 60px; 
+      } 
+ 
+      header h1 { 
+        font-size: 1.8rem; 
+      } 
+ 
+      .features { 
+        flex-direction: column; 
+        align-items: center; 
+      } 
+}
+
+/* Mandate Section Styles */
+    .mandate-container {
+      display: flex;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      overflow: hidden;
+      margin: 2rem auto;
+    }
+
+    .text-section {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .text-section h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .text-section blockquote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .text-section p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .text-section .author {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .image-section {
+      flex-shrink: 0;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .image-section img {
+      max-width: 200px;
+      border-radius: 5px;
+    }
+.sub-dropdown {
+    position: relative;
+}
+
+.sub-dropdown-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+}
+
+.container {
+            padding: 50px 70px;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: stretch;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: left;
+        }
+        .highlight-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .highlight {
+            color: red;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        h3 {
+            margin: 5px 0 0;
+            font-size: 18px;
+        }
+#clock {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 20px;
+    color: white;
+    font-family: 'Poppins', serif;
+}
+	}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="sktg.png" alt="SK Tanjong Gading Logo">
+   <h1 id="Sk Tanjong Gading" style="text-align: center; font-size: 2.5rem; margin: 2rem 0; color: white;">SK Tanjong Gading</h1>
+  </header>
+
+<center><div id="clock" style="font-size: 20px; color: white; font-family: 'Poppins', serif; margin-top: 20px;"></center></div>
+
+<script>
+    function updateClock() {
+        var today = new Date();
+
+        var dayOfWeek = today.toLocaleString('en-us', { weekday: 'long' });
+        var day = today.getDate();
+        var month = today.getMonth() + 1; // Month is 0-based
+        var year = today.getFullYear();
+
+        var hours = today.getHours();
+        var minutes = today.getMinutes();
+        var seconds = today.getSeconds();
+
+        minutes = (minutes < 10) ? '0' + minutes : minutes;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+
+        var timeString = hours + ':' + minutes + ':' + seconds;
+        var dateString = dayOfWeek + ', ' + day + '/' + month + '/' + year;
+
+        document.getElementById('clock').innerHTML = dateString + ' | ' + timeString;
+    }
+
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+ <nav>
+  <ul>
+    <li class="dropdown">
+      <a href="Tentang Kami.html">Tentang Kami</a>
+      <div class="dropdown-content">
+        <a href="Sejarah SKTG.html">Sejarah SKTG</a>
+        <a href="Nilai.html">Nilai dan Budaya</a>
+      </div>
+    </li>
+
+<ul class="navbar">
+  <li class="dropdown">
+    <a href="#events">Events</a>
+    <div class="dropdown-content">
+      <a href="pastevent.html">Past Events</a>
+	<a href="gallery.html">Galeri SKTG</a>
+	<a href="Videos.html">Video</a>
+    </div>
+  </li>
+</ul>
+
+
+
+
+<ul class="navbar">
+    <li class="dropdown">
+        <a href="#">Akademik</a>
+        <div class="dropdown-content">
+            <div class="sub-dropdown">
+                <a href="#">Jadual Kelas</a>
+                <div class="sub-dropdown-content">
+                    <a href="jadualkelastahun1.html">Tahun 1</a>
+                    <a href="jadualkelastahun2.html">Tahun 2</a>
+                    <a href="jadualkelastahun3.html">Tahun 3</a>
+                    <a href="jadualkelastahun4.html">Tahun 4</a>
+                    <a href="jadualkelastahun5.html">Tahun 5</a>
+                    <a href="jadualkelastahun6.html">Tahun 6</a>
+                </div>
+            </div>
+            <a href="sukan.html">Sukan Tahunan</a>
+	    <a href="unitberuniform.html">Unit Beruniform</a>
+	    <a href="akademik.html">Program Akademik</a>
+	    <a href="pencapaianpelajar.html">Pencapaian Pelajar</a>
+        </div>
+    </li>
+</ul>
+
+   
+    <li class="dropdown">
+      <a href="#">Direktori Guru</a>
+      <div class="dropdown-content">
+        <a href="listgurubesar.html">Senarai Nama Guru Besar</a>
+        <a href="listguru.html">Senarai Nama Guru dan Kakitangan</a>
+      </div>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">FAQ</a>
+      <div class="dropdown-content">
+        <a href="Soalan Lazim.html">Soalan Lazim</a>
+        <a href="aduan.html">Aduan</a>
+      </div>
+    </li>
+
+<li><a href="hubungikami.html">Hubungi Kami</a></li>
+
+  </ul>
+</nav>
+
+
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Selamat Datang ke SK Tanjong Gading</h1>
+      <p>Cekap . Cekal . Cemerlang</p>
+      <a href="Tentang Kami.html">Learn More</a>
+    </div>
+  </section>
+
+<!-- Mandate Section -->
+  <div class="mandate-container">
+    <div class="text-section">
+      <h2>SEKAPUR SIRIH </h2>
+      <blockquote>
+        "Cekap , Cekal , Cemerlang ."
+      </blockquote>
+      <p>
+        Harapan saya agar warga SK Tanjong Gading bertekad dan berazam untuk menunaikan tanggungjawab dan amanah yang telah disusun secara optimum. Nilai yang dikongsikan bersama iaitu " Membahagiakan , Saling Menghormati dan Disayangi harus dijiwai untuk memanusiawikan lapangan kerja kita bersama. 
+      </p>
+      <p class="author">- Puan Nafisah Binti Ibrahim , SKTG </p>
+    </div>
+    <div class="image-section">
+      <img src="gurubesar.jpg" alt="Guru Besar">
+    </div>
+  </div>
+
+<div class="container">
+        <center><div class="title">Mengapa SK Tanjong Gading?</div></center>
+
+        <div class="card-container">
+            <div class="card">
+                <p> Guru Berpengalaman & Berdedikasi</p>
+                <ul>
+                    <li>Program Pembelajaran 21st Century</li>
+                    <li>Kelas Tambahan Percuma</li>
+                    <li>Penggunaan teknologi dalam P&P</li>
+                    <li>Guru Berkelayakan & Bertauliah</li>
+                    <li>Pengajaran Interaktif & Digital</li>
+                    <li>Modul Kemahiran Berfikir Aras Tinggi (KBAT)</li>
+                    <li>Kaedah Pembelajaran Kreatif</li>
+                </ul>
+            </div>
+
+            <div class="card highlight-card">
+                <p class="highlight">#5</p>
+                <h3>dalam Daerah (Pencapaian Akademik)</h3>
+            </div>
+
+            <div class="card">
+                <p>🏆 Sekolah Berprestasi Tinggi</p>
+                <ol>
+                    <li>Keputusan cemerlang dalam UPSR</li>
+                    <li>Program bimbingan khas untuk murid</li>
+                    <li>Pemenang pertandingan akademik daerah</li>
+                    <li>Persekitaran Pembelajaran Selamat & Selesa</li>
+                    <li>Kurikulum Holistik & Inovatif</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <p>Aktiviti & Kejohanan</p>
+                <ol>
+                    <li>Johan Bola Sepak Peringkat Daerah</li>
+                    <li>Pasukan Olahraga & Silat Berprestasi</li>
+                    <li>Kelab Robotik & Inovasi</li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <p> Fasiliti Lengkap & Moden</p>
+                <ul>
+                    <li>Makmal Komputer & Sains</li>
+                    <li>Perpustakaan Digital</li>
+                    <li>Surau & Dewan Serbaguna</li>
+                    <li>Laluan Berbumbung & Mesra OKU</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<hr>
+
+<main>
+    <section class="features">
+      <div class="feature">
+        <h3>Program Akademik</h3>
+        <p>Ketahui lebih lanjut tentang sekolah, misi dan pencapaian kami.</p>
+	<a href="akademik.html">[Learn More]</a>
+      </div>
+      <div class="feature">
+        <h3>Sukan Sekolah </h3>
+        <p>Lihat lebih lanjut tentang sukan sekolah tahunan. </p>
+	<a href="sukan.html">[Learn More]</a>
+      </div>
+      <div class="feature">
+        <h3>Unit Beruniform</h3>
+        <p>Unit beruniform SKTG .</p>
+	<a href="unitberuniform.html">[Learn More]</a>
+      </div>
+    </section>
+  </main>
+
+ 
+
+<hr>
+ <h1 id="events" style="text-align: center; font-size: 2.5rem; margin: 2rem 0;">Events</h1>
+
+ 
+<div class="slideshow-container"> 
+ 
+    <div class="slides"> 
+        <img src="1.jpg" alt="Temuduga Calon Pemimpin Muda 2025"> 
+        <div class="description"> 
+            <p>Temuduga Calon Pemimpin Muda 2025</p> 
+            <p>  1 Januari 2025 </p> 
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd9Z5azeNuEeHxpjTQV2WPqiEn2pXqZk0zuiBohiwXPmwdIWg/viewform?usp=dialog" class="register-btn">Daftar Sekarang</a> 
+        </div> 
+    </div> 
+ 
+    <div class="slides"> 
+        <img src="2.jpg" alt="Majlis Apresiasi Murid Sesi 2024/2025"> 
+        <div class="description"> 
+            <p>Majlis Apresiasi Murid Sesi 2024/2025</p> 
+            <p>09 Januari 2025</p> 
+        </div> 
+    </div> 
+ 
+    <div class="slides"> 
+        <img src="3.jpg" alt="Jom Kongsi Buku"> 
+        <div class="description"> 
+            <p>Jom Kongsi Buku</p> 
+            <p>15 Januari 2025</p> 
+            <a href="https://forms.gle/rku3KKNcwVBYN1bw5" class="register-btn">Daftar Sekarang</a> 
+        </div> 
+    </div> 
+ 
+    <div class="slides"> 
+        <img src="4.jpg" alt="Event 4"> 
+        <div class="description"> 
+            <p>Gerakan Kepimpinan Madani: Hentikan Salahlaku Buli dan Seksual</p> 
+            <p>13 Januari 2025</p>
+        </div> 
+    </div> 
+ 
+    <div class="slides"> 
+        <img src="5.jpg" alt="Event 5"> 
+        <div class="description"> 
+            <p>Taklimat Program Transisi Tahun 1</p> 
+            <p>10 Januari 2025</p> 
+        </div> 
+    </div> 
+ 
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+    <a class="next" onclick="plusSlides(1)">&#10095;</a> 
+</div>
+<script>
+let slideIndex = 0; 
+    showSlides(); 
+ 
+    function showSlides() { 
+        let slides = document.getElementsByClassName("slides"); 
+        for (let i = 0; i < slides.length; i++) { 
+            slides[i].style.display = "none"; 
+        } 
+        slideIndex++; 
+        if (slideIndex > slides.length) {slideIndex = 1} 
+        slides[slideIndex - 1].style.display = "block"; 
+        setTimeout(showSlides, 6000);  
+    } 
+ 
+    function plusSlides(n) { 
+        slideIndex += n - 1; 
+        showSlides(); 
+    } 
+</script>
+
+ 
+ 
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <img src="sktg.png" alt="SK Tanjong Gading Logo" class="footer-logo">
+        <p><strong>SK Tanjong Gading</strong></p>
+        <p>Kampung Merbau 84000<br>Muar, Johor </p>
+        <p><strong>Phone:</strong>+06-953 1002<br><strong>Email:</strong>sktanjonggading@gmail.com</p>
+      </div>
+      <div class="footer-column">
+        <h4>Media</h4>
+        <ul>
+          <li><a href="#">News</a></li>
+          <li><a href="pastevent.html">Past Event</a></li>
+          <li><a href="Videos.html">Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="hubungikami.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SK Tanjong Gading. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
