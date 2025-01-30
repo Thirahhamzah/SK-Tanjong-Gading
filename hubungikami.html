@@ -119,6 +119,59 @@
       margin: 0;
       font-size: 0.9rem;
     }
+
+ .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h3 {
+        text-align: center;
+        color: #333;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+    input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    .pertanyaan-list {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .pertanyaan-item {
+        background-color: #e9ecef;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -126,8 +179,7 @@
     <h1>Hubungi Kami</h1>
   </header>
 
-  <div class="container">
-    <div class="contact-info">
+  <center>
       <h2>Sekolah Kebangsaan Tanjong Gading</h2>
       <p>
         Kampung Merbau<br>
@@ -136,27 +188,58 @@
         <strong>Email:</strong> <span class="highlight">sktanjonggading@gmail.com</span>
       </p>
       <p>Sila hubungi kami untuk maklumat lanjut atau sebarang pertanyaan.</p>
+</center>
     </div>
 
-    <div class="contact-form">
-      <h3>Hantar Pertanyaan Anda</h3>
-      <form action="submit_form.php" method="POST">
-        <label for="name">Nama</label>
-        <input type="text" id="name" name="name" placeholder="Masukkan nama anda" required>
+   <div class="container"> 
+    <form id="pertanyaanForm"> 
+        <h3>Hantar Pertanyaan Anda</h3>
+        <label for="nama">Nama:</label> 
+        <input type="text" id="nama" name="nama" placeholder="Masukkan nama anda" required> 
+         
+        <label for="email">Email:</label> 
+        <input type="email" id="email" name="email" placeholder="Masukkan email anda" required> 
+         
+        <label for="pertanyaan">Pertanyaan:</label> 
+        <textarea id="pertanyaan" name="pertanyaan" rows="4" placeholder="Masukkan pertanyaan anda" required></textarea> 
+         
+        <button type="submit">Hantar</button> 
+    </form> 
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Masukkan email anda" required>
+    <div class="pertanyaan-list" id="pertanyaanList"> 
+        <h2>Senarai Pertanyaan</h2> 
+    </div> 
+</div> 
 
-        <label for="message">Mesej</label>
-        <textarea id="message" name="message" placeholder="Masukkan mesej anda" required></textarea>
+<script> 
+    document.getElementById('pertanyaanForm').addEventListener('submit', function(event) { 
+        event.preventDefault(); // Mengelakkan refresh halaman 
 
-        <button type="submit">Hantar</button>
-      </form>
-    </div>
-  </div>
+        const nama = document.getElementById('nama').value; 
+        const email = document.getElementById('email').value; 
+        const pertanyaan = document.getElementById('pertanyaan').value; 
 
+        if (nama && email && pertanyaan) { 
+            const pertanyaanItem = document.createElement('div'); 
+            pertanyaanItem.classList.add('pertanyaan-item'); 
+            pertanyaanItem.innerHTML = ` 
+                <h3>Pertanyaan dari ${nama}</h3> 
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Pertanyaan:</strong> ${pertanyaan}</p> 
+            `; 
+
+            document.getElementById('pertanyaanList').appendChild(pertanyaanItem); 
+
+            // Reset borang 
+            this.reset(); 
+        } else { 
+            alert('Sila isi semua maklumat!'); 
+        } 
+    }); 
+</script>
   <footer>
     <p>&copy; 2025 Sekolah Kebangsaan Tanjong Gading. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
